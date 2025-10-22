@@ -52,3 +52,4 @@ temp/
 # OS generated files
 Thumbs.db
 .DS_Store
+go.sum
