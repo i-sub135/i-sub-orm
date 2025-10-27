@@ -6,7 +6,8 @@ import (
 
 // executorWrapper is a wrapper around the executor.Executor struct
 type executorWrapper struct {
-	exec *executor.Executor
+	exec   *executor.Executor
+	driver string
 }
 
 // newExecutorWrapper creates a new executorWrapper instance
@@ -15,5 +16,8 @@ func newExecutorWrapper(driver, dsn string) (*executorWrapper, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &executorWrapper{exec: exec}, nil
+	return &executorWrapper{
+		exec:   exec,
+		driver: driver,
+	}, nil
 }
